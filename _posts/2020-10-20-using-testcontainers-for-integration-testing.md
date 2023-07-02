@@ -3,7 +3,7 @@ layout: post
 title:  Using Testcontainers for Integration Testing
 description: As a follow on from my last post about running sql server in docker, I thought i’d write about something...
 date:   2020-10-20 15:01:35 +0300
-image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/integration.jpeg'
+image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/testing.jpg'
 tags:   [docker, testing]
 ---
 
