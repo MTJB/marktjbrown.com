@@ -1,0 +1,18 @@
+<svg width="230" height="170" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <path fill="rgb(145,29,85)" stroke="rgb(145,29,85)" stroke-width="1" opacity="1" d="M 60 30 L 70 30 L 70 40 L 60 40 L 60 30 Z "></path>
+    <path fill="rgb(191,38,81)" stroke="rgb(191,38,81)" stroke-width="1" opacity="1" d="M 30 30 L 60 30 L 60 40 L 40 40 L 40 70 L 30 70 L 30 30 Z "></path>
+    <path fill="rgb(191,38,81)" stroke="rgb(191,38,81)" stroke-width="1" opacity="1" d="M 70 30 L 189.5 30 L 190 30.5 L 190 50 L 180 50 L 180 40.5 L 179.5 40 L 70.5 40 L 70 39.5 L 70 30 Z "></path>
+    <path fill="rgb(191,38,81)" stroke="rgb(191,38,81)" stroke-width="1" opacity="1" d="M 30 80 L 40 80 L 40 90 L 30 90 L 30 80 Z "></path>
+    <path fill="rgb(191,38,81)" stroke="rgb(191,38,81)" stroke-width="1" opacity="1" d="M 180 120 L 190 120 L 190 140 L 160 140 L 160 130 L 180 130 L 180 120 Z "></path>
+    <path fill="rgb(191,38,81)" stroke="rgb(191,38,81)" stroke-width="1" opacity="1" d="M 140 130 L 150 130 L 150 140 L 140 140 L 140 130 Z "></path>
+    <path fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" opacity="0" d="M 0 0 L 230 0 L 230 170 L 0 170 L 0 0 Z M 30 30 L 30 140 L 190 140 L 190 140 L 190 120 L 180 120 L 180 130 L 40 130 L 40 40 L 180 40 L 180 41 L 180 50 L 190 50 L 190 31 L 190 30 L 30 30 Z M 50 60 L 50 110 L 60 110 L 60 110 L 60 70 L 70 70 L 70 71 L 70 110 L 80 110 L 80 110 L 80 70 L 90 70 L 90 71 L 90 110 L 100 110 L 100 60 L 50 60 Z M 110 60 L 110 70 L 120 70 L 120 71 L 120 110 L 130 110 L 130 110 L 130 70 L 140 70 L 140 60 L 110 60 Z M 160 60 L 160 100 L 150 100 L 150 90 L 140 90 L 140 110 L 170 110 L 170 61 L 170 60 L 160 60 Z M 180 60 L 180 110 L 210 110 L 210 60 L 180 60 Z "></path>
+    <path fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" opacity="0" d="M 190 70 L 200 70 L 200 80 L 190 80 L 190 70 Z "></path>
+    <path fill="rgb(0,0,0)" stroke="rgb(0,0,0)" stroke-width="1" opacity="0" d="M 190 90 L 200 90 L 200 100 L 190 100 L 190 90 Z "></path>
+    <path fill={fill} stroke={fill} stroke-width="1" opacity="1" d="M 50 60 L 100 60 L 100 110 L 90 110 L 90 70.5 L 89.5 70 L 80 70 L 80 109.5 L 79.5 110 L 70 110 L 70 70.5 L 69.5 70 L 60 70 L 60 109.5 L 59.5 110 L 50 110 L 50 60 Z "></path>
+    <path fill={fill} stroke={fill} stroke-width="1" opacity="1" d="M 110 60 L 140 60 L 140 70 L 130 70 L 130 109.5 L 129.5 110 L 120 110 L 120 70.5 L 119.5 70 L 110 70 L 110 60 Z "></path>
+    <path fill={fill} stroke={fill} stroke-width="1" opacity="1" d="M 160 60 L 169.5 60 L 170 60.5 L 170 110 L 140 110 L 140 90 L 150 90 L 150 100 L 160 100 L 160 60 Z "></path>
+    <path fill={fill} stroke={fill} stroke-width="1" opacity="1" d="M 180 60 L 210 60 L 210 110 L 180 110 L 180 60 Z M 190 70 L 190 80 L 200 80 L 200 70 L 190 70 Z M 190 90 L 190 100 L 200 100 L 200 90 L 190 90 Z "></path>
+    <path fill="rgb(219,61,106)" stroke="rgb(219,61,106)" stroke-width="1" opacity="1" d="M 30 70 L 40 70 L 40 80 L 30 80 L 30 70 Z "></path>
+    <path fill="rgb(219,61,106)" stroke="rgb(219,61,106)" stroke-width="1" opacity="1" d="M 30 90 L 39.5 90 L 40 90.5 L 40 130 L 139.5 130 L 140 130.5 L 140 140 L 30 140 L 30 90 Z "></path>
+    <path fill="rgb(219,61,106)" stroke="rgb(219,61,106)" stroke-width="1" opacity="1" d="M 150 130 L 160 130 L 160 140 L 150 140 L 150 130 Z "></path>
+</svg>
