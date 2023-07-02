@@ -3,11 +3,11 @@ layout: post
 title:  Using Testcontainers for Integration Testing
 description: As a follow on from my last post about running sql server in docker, I thought i’d write about something...
 date:   2020-10-20 15:01:35 +0300
-image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/testing.png'
+image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/integration.png'
 tags:   [docker, testing]
 ---
 
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">You don&#39;t. <br><br>You test them using integration tests against the actual DB using Docker or <a href="https://twitter.com/testcontainers?ref_src=twsrc%5Etfw">@testcontainers</a></p>&mdash; Vlad Mihalcea (@vlad_mihalcea) <a href="https://twitter.com/vlad_mihalcea/status/1196026201669881857?ref_src=twsrc%5Etfw">November 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">You don&#39;t. <br><br>You test them using integration tests against the actual DB using Docker or <a href="https://twitter.com/testcontainers?ref_src=twsrc%5Etfw">@testcontainers</a></p>&mdash; Vlad Mihalcea (@vlad_mihalcea) <a href="https://twitter.com/vlad_mihalcea/status/1196026201669881857?ref_src=twsrc%5Etfw">November 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 👋 Introduction
 As a follow on from my last post about running sql server in docker, I thought i’d write about something that I have just introduced for the first time into one of my projects – in the hope that some of you feel as passionate as I do about testing your production code (and not just the equivalent in [H2](https://www.h2database.com/html/main.html)-specific syntax 😱). I hope that through this post I can show you how easy it is to include this dependency into your project, and be on your way to having your integration tests running against your production database!
@@ -19,7 +19,7 @@ All code in this post is available open source under the MIT licence on my [GitH
 ## 🧐 Requirements
 In order to use testcontainers, you will of course need to have Docker [installed and running](https://docs.docker.com/desktop/). You will also need to add the the testcontainer depencies for MSSQLServer, for example (in Gradle);
 
-```java
+```groovy
 testCompile 'org.testcontainers:testcontainers:1.14.3'
 testCompile 'org.testcontainers:mssqlserver:1.14.3'
 ```
@@ -32,7 +32,7 @@ Now that you have the testcontainer dependency on your classpath, its time to ac
 #### Define an Initializer
 An Initializer – simply put – is what tells the ApplicationContext where your db is – by nature the Docker container gets a randomly allocated port so this cannot be statically set (or rather, should _not_ be to avoid port collisions on startup).
 
-```java
+```groovy
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
 import org.springframework.context.annotation.Profile
@@ -98,7 +98,7 @@ class SqlserverTests extends SqlSpec {
 #### Running your tests
 With test containers set up for the test suite, running tests is easy – it just works! As you can see in the log output below, test containers takes it from here – It pulls the MSSQL Server image (if it does not exist), starts it, and then starts running your tests.
 
-```java
+```bash
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
