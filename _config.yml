@@ -13,7 +13,7 @@ color_scheme: auto # Supports auto, light, and dark.
 author:
   author__name: Mark Brown
   author__bio: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house. Duties mainly involve turning it off and on again.
-  author__avatar: '/images/01-1.jpg'
+  author__avatar: '/images/mark/avatar_white.jpg'
 
 social:
 - {icon: "ion-logo-twitter", link: "https://twitter.com/marktjbrown"}
