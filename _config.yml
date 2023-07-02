@@ -12,7 +12,7 @@ color_scheme: auto # You can choose three modes auto, light, and dark. By defaul
 # Author Settings
 author:
   author__name: Mark Brown
-  author__bio: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house, duties mainly involve turning it off and on again.
+  author__bio: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house. Duties mainly involve turning it off and on again.
   author__avatar: '/images/01-1.jpg'
 
 social:
@@ -28,7 +28,7 @@ social:
 hero:
   hero__title: Hey, I’m Camelia Mendes
   hero__description: Designs, talks, and writes about web, ethics, privacy, and dev. I share design tutorials, free resources and inspiration.
-  hero__image: '/images/01.jpg'
+  hero__image: '/images/mark/avatar_white.png'
 
 
 #-------------------------------
