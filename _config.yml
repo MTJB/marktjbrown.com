@@ -11,18 +11,15 @@ color_scheme: auto # You can choose three modes auto, light, and dark. By defaul
 #-------------------------------
 # Author Settings
 author:
-  author__name: Camelia Mendes
-  author__bio: Designs, talks, and writes about web, ethics, privacy, and dev. I share design tutorials, free resources and inspiration.
+  author__name: Mark Brown
+  author__bio: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house, duties mainly involve turning it off and on again.
   author__avatar: '/images/01-1.jpg'
 
 social:
-- {icon: "ion-logo-twitter", link: "https://twitter.com"}
-- {icon: "ion-logo-facebook", link: "https://facebook.com"}
-- {icon: "ion-logo-instagram", link: "https://instagram.com"}
-- {icon: "ion-logo-pinterest", link: "https://pinterest.com"}
-- {icon: "ion-logo-youtube", link: "https://youtube.com"}
-
-# Example of adding a new link to the footer - {icon: "ion-logo-dribbble", link: "https://dribbble.com"}
+- {icon: "ion-logo-twitter", link: "https://twitter.com/marktjbrown"}
+- {icon: "ion-logo-github", link: "https://github.com/mtjb"}
+- {icon: "ion-logo-instagram", link: "https://instagram.com/marktjbrown"}
+- {icon: "ion-logo-linkedin", link: "https://www.linkedin.com/in/mark-brown-9952b4a8/"}
 # Other icons can be found at https://ionicons.com/v4/
 
 
