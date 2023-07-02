@@ -3,7 +3,7 @@ layout: post
 title:  Using Testcontainers for Integration Testing
 description: As a follow on from my last post about running sql server in docker, I thought i’d write about something...
 date:   2020-10-20 15:01:35 +0300
-image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/integration.png'
+image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/integration.jpeg'
 tags:   [docker, testing]
 ---
 
@@ -98,7 +98,7 @@ class SqlserverTests extends SqlSpec {
 #### Running your tests
 With test containers set up for the test suite, running tests is easy – it just works! As you can see in the log output below, test containers takes it from here – It pulls the MSSQL Server image (if it does not exist), starts it, and then starts running your tests.
 
-```bash
+```
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
 ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
