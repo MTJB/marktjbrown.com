@@ -4,7 +4,7 @@ title:  That which does not kill us makes us stronger
 description: Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative a...
 date:   2020-11-14 15:01:35 +0300
 image:  '/images/02.jpg'
-video_embed: https://www.youtube.com/watch?v=3Yd3lQVbkYc&ab_channel=DJRMemes
+video_embed: https://www.youtube.com/embed/3Yd3lQVbkYc
 tags:   [workflow, hobby, study]
 ---
 Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace [Andre Furtado](https://unsplash.com/photos/u_6Zj2d1I5Q) diversity and empowerment.

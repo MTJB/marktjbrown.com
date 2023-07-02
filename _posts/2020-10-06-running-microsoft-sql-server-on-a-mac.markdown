@@ -4,7 +4,7 @@ title:  Running Microsoft SQL Server... on a Mac!
 description: A few years ago I switched my main work machine from Windows to Mac – despite the reliance I have on SQL...
 date:   2020-10-06 15:01:35 +0300
 image:  '/images/posts/2020-10-06-running-microsoft-sql-server-on-a-mac/apples.jpeg'
-tags:   [docker, sqlserver]
+tags:   [docker, sql]
 ---
 
 ## 👋 Introduction
