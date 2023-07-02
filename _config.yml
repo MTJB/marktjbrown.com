@@ -45,8 +45,8 @@ gallery:
   gallery__title: Gallery
   gallery__columns: 3
   gallery__images:
-    - alt: 'Rest'
-      url: '/images/100.jpg'
+    - alt: 'Wedding'
+      url: '/images/gallery/wedding.jpg'
     - alt: 'Lifestyle'
       url: '/images/101.jpg'
     - alt: 'Hobby'
