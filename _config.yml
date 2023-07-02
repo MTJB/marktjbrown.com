@@ -13,7 +13,7 @@ color_scheme: auto # Supports auto, light, and dark.
 author:
   author__name: Mark Brown
   author__bio: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house. Duties mainly involve turning it off and on again.
-  author__avatar: '/images/01-1.jpg'
+  author__avatar: '/images/mark/avatar_white.jpg'
 
 social:
 - {icon: "ion-logo-twitter", link: "https://twitter.com/marktjbrown"}
@@ -26,8 +26,8 @@ social:
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: Hey, I’m Camelia Mendes
-  hero__description: Designs, talks, and writes about web, ethics, privacy, and dev. I share design tutorials, free resources and inspiration.
+  hero__title: Mark Brown
+  hero__description: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house. Duties mainly involve turning it off and on again.
   hero__image: '/images/mark/avatar_white.jpg'
 
 
