@@ -25,17 +25,17 @@ Now imagine you receive a shipment of fancy new Mercedes', and you make a typo i
 
 The Java developer in me looks at the 2 strings and thinks "But of course, they don't match!". To which the SQL developer in me now says - ah of course, ANSI/ISO SQL-92.
 
-![ANSI/ISO SQL-92](..%2Fimages%2Fposts%2F2021-12-02-til-tsql-string-compare%2Fspec.jpeg)
+![ANSI/ISO SQL-92]({{site.baseurl}}/images/posts/2021-12-02-til-tsql-string-compare/spec.jpeg)
 
 ## So why does it do this? 🙋‍♂️
 The ANSI/ISO SQL-92, for those that don't know, requires padding for the strings used in comparisons so that their lengths match before comparing them. This padding affects the semantics of `WHERE` and `HAVING` clause predicates among other TSQL string comparisons. For example, TSQL would consider both `'A'` and `'A '` to be the same for most comparison operations.
 
 The only exception to this is the `LIKE` predicate, because the purpose of this predicate (by definition) is to facilitate pattern searches rather than equality tests.
 
-![TSQL](..%2Fimages%2Fposts%2F2021-12-02-til-tsql-string-compare%2Ftsql.jpeg)
+![TSQL]({{site.baseurl}}/images/posts/2021-12-02-til-tsql-string-compare/tsql.jpeg)
 
 ## TL;DR ⏭
-```sql
+```
 MBP:~ mtjb$ sqlcmd -b -S "127.0.0.1" -U sa -P 'password'
 1>
 1>

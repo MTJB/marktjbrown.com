@@ -91,7 +91,7 @@ public class DivideJunitTests {
 ```
 
 ..and one in Groovy;
-```java
+```groovy
 import spock.lang.Specification
 import spock.lang.Tag
 
@@ -112,7 +112,7 @@ class DivideSpockTests extends Specification {
 ```
 
 As expected, these can both be run via Gradle;
-```java
+```
 $ ./gradlew test
 
 > Task :test
@@ -135,7 +135,7 @@ BUILD SUCCESSFUL in 3s
 
 
 With a few tweaks to your build file;
-```bash
+```groovy
 test {
     useJUnitPlatform {
 
@@ -152,7 +152,7 @@ test {
 ```
 
 You can start to filter what tests are being ran;
-```java
+```
 $ ./gradlew test -Dgroups=Spock
 
 > Task :test

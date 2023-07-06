@@ -8,7 +8,7 @@ tags:   [sql]
 ---
 
 ## First things first - what is SQL 😅
-SQL is a _fourth-generation_ language, and the main benefit is separating the what and the how - SQL is the straight description of what is needed without getting into how it is done. For example;
+SQL is a _fourth-generation_ language, and the main benefit is separating the "what" from the "how" - SQL is the straight description of what is needed without getting into how it is done. For example;
 
 ```sql
 SELECT job_title
@@ -48,19 +48,19 @@ In Microsoft SQL Server, there is a slight difference when comparing `CLUSTERED`
 Each index entry consists of the indexed columns (column 2 in the diagram) and refers to the corresponding table row (`ROWID`). Unlike the index, this table data is stored in a heap structure so is not sorted at all.
 
 ## The search tree (B-Tree) 🌴
-The leaf nodes are not stored in a specific order - for example, consider book on programming with it's index stored in the same manner; if you were searching the contents for 'iteration' and landed on 'recursion', it is by no means granted that 'iteration' is before 'recursion'.
+The leaf nodes are not stored in a specific order - for example, consider book on programming with its index stored in the same manner; if you were searching the contents for 'iteration' and landed on 'recursion', it is by no means granted that 'iteration' is before 'recursion'.
 
 ![Recursion]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/recursion.png)
 
 Databases overcome this by using a second structure to find the entries among the shuffled pages; a balanced search tree, or 'B-tree'.
 
-Like many trees in life, the B-tree has a root, branches and leaves (which we just covered). Each branch node entry corresponds to the biggest value in the respective leaf node, this hierarchy is applied backwards from all of the leaf nodes until all the values are covered by a single node; the root node.
+Like many trees in life, the B-tree has a root, branches and leaves (which we just covered). Each branch node entry corresponds to the biggest value in the respective leaf node, this hierarchy is applied backwards from all the leaf nodes until all the values are covered by a single node; the root node.
 
 Once created, the database maintains this index automatically - adjusting it as necessary for every `INSERT`, `UPDATE` or `DELETE` statement and keeps the tree in balance.
 
 ![Tree Traversal]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/traversal.png)
 
-The diagram demonstrates how the tree is traversed to search for the key '68'. It starts at the root node, moving along until a value is greater than or equal to the search term, and then navigates to that branch node, and repeats. Eventually this traversal reaches the leaf node.
+The diagram demonstrates how the tree is traversed to search for the key "68". It starts at the root node, moving along until a value is greater than or equal to the search term, and then navigates to that branch node, and repeats. Eventually this traversal reaches the leaf node.
 
 Tree traversal is a very efficient operation, it works almost instantly - even on a huge data set. Primarily because of the tree balance, and secondly because of the logarithmic growth of the tree depth. (In other words, the depth of the tree grows very slowly compared to the number of the leaf nodes). Real world indexes with millions of records only have a depth of four or five.
 
@@ -93,7 +93,7 @@ When running this query to fetch the employee's name, the where clause cannot ma
 ![Primary Key]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/pk.png)
 
 ### Composite Primary Keys
-A primary key can contain more than one column, sometimes called a *concatenated*, *multi-column*, or *composite* key. In a composite key, column order is important so it must be chosen carefully.
+A primary key can contain more than one column, sometimes called a *concatenated*, *multi-column*, or *composite* key. In a composite key column order is important, so it must be chosen carefully.
 
 Consider the employee table from before, for demonstration let’s imagine we now want to make this table capable of storing employee information for multiple tenants, so we wish to add a tenant column and include it in the primary key.
 
@@ -124,11 +124,11 @@ AND employee_id = 123
 
 If running the original query, excluding tenant from the `WHERE` clause you can see the updated primary key is no longer used. Instead, a table scan occurs, and the database reads every row from the table data and compares them with the specified `WHERE` clause.
 
-![Indexe Scan]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/index_scan.png)
+![Index Scan]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/index_scan.png)
 
 Columns in a composite key cannot be used arbitrarily, think back the tree traversal the of the B-Tree - since *tenant* is the first item in the primary key it must be specified in the `WHERE` clause or the index cannot be used.
 
-A full table scan results in a query which may not appear to be expensive in a development environment, but as the table data grows this operation slows - and its best to avoid finding out the hard way - in *production* 😱
+A full table scan results in a query which may not appear to be expensive in a development environment, but as the table data grows this operation slows - and it is best to avoid finding out the hard way - in *production* 😱
 
 We could of course add a second index to support the query and get round the table scan, but in this example it does not make sense to read from this table and not specify the *tenant* identifier - so this performance problem lies in the query and not the indexing.
 
