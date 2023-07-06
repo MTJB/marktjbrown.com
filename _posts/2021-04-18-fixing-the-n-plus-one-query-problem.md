@@ -17,7 +17,7 @@ The N+1 query problem is sometimes hard to diagnose from reading your code - whi
 ## 🧐 Examples
 Consider the following `car_garage` and `car` tables which from a _one-to-many_ relationship;
 
-![Gatsby]({{site.baseurl}}/images/posts/2021-04-18-fixing-the-n-plus-one-query-problem/schema.png)
+![Schema]({{site.baseurl}}/images/posts/2021-04-18-fixing-the-n-plus-one-query-problem/schema.png)
 
 #### FetchType.EAGER
 Using `FetchType.EAGER` is generally best avoided because you are going to fetch more data than is required, but also because this fetch type is prone to N+1 issues. The good news, however, this is not always used by default but if your entity relationship is using `@ManyToOne` or `@OneToOne` then unfortunately this is used the default value.

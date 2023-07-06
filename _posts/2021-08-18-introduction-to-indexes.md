@@ -50,7 +50,7 @@ Each index entry consists of the indexed columns (column 2 in the diagram) and r
 ## The search tree (B-Tree) 🌴
 The leaf nodes are not stored in a specific order - for example, consider book on programming with it's index stored in the same manner; if you were searching the contents for 'iteration' and landed on 'recursion', it is by no means granted that 'iteration' is before 'recursion'.
 
-![Indexes]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/recursion.png)
+![Recursion]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/recursion.png)
 
 Databases overcome this by using a second structure to find the entries among the shuffled pages; a balanced search tree, or 'B-tree'.
 
@@ -58,13 +58,13 @@ Like many trees in life, the B-tree has a root, branches and leaves (which we ju
 
 Once created, the database maintains this index automatically - adjusting it as necessary for every `INSERT`, `UPDATE` or `DELETE` statement and keeps the tree in balance.
 
-![Indexes]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/traversal.png)
+![Tree Traversal]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/traversal.png)
 
 The diagram demonstrates how the tree is traversed to search for the key '68'. It starts at the root node, moving along until a value is greater than or equal to the search term, and then navigates to that branch node, and repeats. Eventually this traversal reaches the leaf node.
 
 Tree traversal is a very efficient operation, it works almost instantly - even on a huge data set. Primarily because of the tree balance, and secondly because of the logarithmic growth of the tree depth. (In other words, the depth of the tree grows very slowly compared to the number of the leaf nodes). Real world indexes with millions of records only have a depth of four or five.
 
-![Indexes]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/logarithmic_scalability.png)
+![Logarithmic Scalability]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/logarithmic_scalability.png)
 
 ## WHERE to begin... the Primary Key 🕵🏻‍♂️
 The first ingredient of a slow query, is the `WHERE` clause. The `WHERE` clause defines the search condition of a SQL statement, and it is often phrased carelessly - causing the database to scan a large part of the index.
@@ -90,7 +90,7 @@ WHERE employee_id = 123
 
 When running this query to fetch the employee's name, the where clause cannot match multiple rows, as the primary key constraint ensures uniqueness of the `employee_id` values. When looking at the execution plan for this query, we can see an index seek was performed on the primary key; `employees_pk`.
 
-![Indexes]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/pk.png)
+![Primary Key]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/pk.png)
 
 ### Composite Primary Keys
 A primary key can contain more than one column, sometimes called a *concatenated*, *multi-column*, or *composite* key. In a composite key, column order is important so it must be chosen carefully.
@@ -120,11 +120,11 @@ WHERE tenant = 1
 AND employee_id = 123
 ```
 
-![Indexes]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/composite_pk.png)
+![Composite Primary Key]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/composite_pk.png)
 
 If running the original query, excluding tenant from the `WHERE` clause you can see the updated primary key is no longer used. Instead, a table scan occurs, and the database reads every row from the table data and compares them with the specified `WHERE` clause.
 
-![Indexes]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/index_scan.png)
+![Indexe Scan]({{site.baseurl}}/images/posts/2021-08-18-introduction-to-indexes/index_scan.png)
 
 Columns in a composite key cannot be used arbitrarily, think back the tree traversal the of the B-Tree - since *tenant* is the first item in the primary key it must be specified in the `WHERE` clause or the index cannot be used.
 
