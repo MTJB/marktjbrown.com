@@ -68,7 +68,7 @@ From here, all that's left to do is add yourself as an [Author](https://github.c
 #### Hosting your site on Gatsby Cloud
 I chose to host my new site on Gatsby's own hosting solution - Gatsby Cloud, mainly because of their pricing tiers ([free](https://www.gatsbyjs.com/pricing/) for small projects!) but also because they provide a Real-time Preview, Content Management System (CMS) integration, and automated [Lighthouse](https://developers.google.com/web/tools/lighthouse/) reporting on each deployed version of my site. On top of all this, for me to add new blog posts - I just push to my [GitHub](https://github.com/MTJB/blog_marktjbrown) repo which is pre-authenticated with Gatsby Cloud and the commit hooks deploy a new version of my site automatically!
 
-![Gatsby]({{site.baseurl}}/images/posts/2021-04-05-making-a-blog-with-gatsbyjs/moving.jpeg)
+![Gatsby]({{site.baseurl}}/images/posts/2021-04-05-making-a-blog-with-gatsbyjs/gatsby-cloud.jpeg)
 
 ## 💅 Conclusion
 Moving to GatsbyJS, for me, was relatively pain free - I was up and running with a clone of the Novella theme in minutes, and I only had 5 posts within Wordpress to move over - so a simple copy and paste job worked for me! With this change, I now have a blog I prefer the look of and more importantly, one that I find easier and faster to contribute to. At times, I found Wordpress quite heavyweight to add new content to, whereas now I can add new posts to my blog just by making a few new files in my repository and pushing it to Git!

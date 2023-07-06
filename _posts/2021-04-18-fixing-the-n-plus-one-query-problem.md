@@ -7,7 +7,7 @@ image:  '/images/posts/2021-04-18-fixing-the-n-plus-one-query-problem/nplusone.p
 tags:   [hibernate, java, sql]
 ---
 
-<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Everybody has a testing environment. Some people are lucky enough enough to have a totally separate environment to run production in.</p>&mdash; stahnma (@stahnma) <a href="https://twitter.com/stahnma/status/634849376343429120?ref_src=twsrc%5Etfw">August 21, 2015</a></blockquote>
+<blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">Everybody has a testing environment. Some people are lucky enough enough to have a totally separate environment to run production in.</p>&mdash; stahnma (@stahnma) <a href="https://twitter.com/stahnma/status/634849376343429120?ref_src=twsrc%5Etfw">August 21, 2015</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 👋 Introduction
 In an earlier [blog post](https://marktjbrown.com/improve-query-caching-with-in-clause-padding), I touched upon the cardinal sin of performance issues - N+1 queries. In this blog post I am going to explain through a few examples what the N+1 query problem is, and also suggest how to fix each in your application code.
