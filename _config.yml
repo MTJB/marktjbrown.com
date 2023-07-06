@@ -28,8 +28,8 @@ social:
 # Hero Settings
 hero:
   hero__title: Mark Brown
-  hero__description: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house. Duties mainly involve turning it off and on again.
-  hero__image: '/images/01-1.jpg'
+  hero__description: Hey 👋
+  hero__image: '/images/mark/hero.jpg'
 
 
 #-------------------------------
