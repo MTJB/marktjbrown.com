@@ -20,7 +20,6 @@ social:
 - {icon: "ion-logo-github", link: "https://github.com/mtjb"}
 - {icon: "ion-logo-instagram", link: "https://instagram.com/marktjbrown"}
 - {icon: "ion-logo-linkedin", link: "https://www.linkedin.com/in/mark-brown-9952b4a8/"}
-- {icon: "ion-md-help", link: "https://stackoverflow.com/users/7030856/mark-brown/"}
 # Other icons can be found at https://ionicons.com/v4/
 
 
@@ -44,7 +43,7 @@ mailchimp__button__text: Get a new tip
 # Gallery Footer Section
 gallery:
   gallery__title: Gallery
-  gallery__columns: 3
+  gallery__columns: 2
   gallery__images:
     - alt: 'Wedding'
       url: '/images/gallery/wedding.jpg'
@@ -54,16 +53,6 @@ gallery:
       url: '/images/102.jpg'
     - alt: 'Notes'
       url: '/images/103.jpg'
-    - alt: 'Rest'
-      url: '/images/104.jpg'
-    - alt: 'Hobby'
-      url: '/images/105.jpg'
-    - alt: 'Fashion'
-      url: '/images/106.jpg'
-    - alt: 'Notes'
-      url: '/images/107.jpg'
-    - alt: 'Rest'
-      url: '/images/108.jpg'
 
 
 #-------------------------------
