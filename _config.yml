@@ -47,12 +47,12 @@ gallery:
   gallery__images:
     - alt: 'Wedding'
       url: '/images/gallery/wedding.jpg'
-    - alt: 'Lifestyle'
-      url: '/images/101.jpg'
-    - alt: 'Hobby'
-      url: '/images/102.jpg'
+    - alt: 'Holidays'
+      url: '/images/gallery/hols.jpg'
+    - alt: 'Marathon'
+      url: '/images/gallery/marathon.jpg'
     - alt: 'Notes'
-      url: '/images/103.jpg'
+      url: '/images/gallery/sf.jpg'
 
 
 #-------------------------------
