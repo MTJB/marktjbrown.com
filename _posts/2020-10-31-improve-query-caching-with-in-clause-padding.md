@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  Using Testcontainers for Integration Testing
-description: As a follow on from my last post about running sql server in docker, I thought i’d write about something...
-date:   2020-10-20 15:01:35 +0300
+title:  Improve query caching with IN clause padding
+description: In my experience, the number one cause of application performance problems is not your application code...
+date:   2020-10-31 15:01:35 +0300
 image:  '/images/posts/2020-10-31-improve-query-caching-with-in-clause-padding/padding.jpg'
 tags:   [hibernate, java, sql]
 ---
 
 ## 👋 Introduction
-In my experience, the number one cause of application performance problems is not your application code – it’s your persistence layer. Problems in this area can be caused by many different ‘sins’; Improper entity relationships (think LAZY vs EAGER fetching), Inefficient queries or indeed the cardinal sin – N+1 queries! A lot of the time the application can end up in this way as a result of a lack of awareness of what you are asking the persistence layer to do. Often, you’ll find that simply enabling logging of sql statements will open your eyes to the problem. In fact, when using a data access framework that generates statements on your behalf – it should be *mandatory* that you inspect the generated statements to ensure both their effectiveness, and their performance.
+In my experience, the number one cause of application performance problems is not your application code – it’s your persistence layer. Problems in this area can be caused by many ‘sins’; Improper entity relationships (think LAZY vs EAGER fetching), Inefficient queries or indeed the cardinal sin – N+1 queries! A lot of the time the application can end up in this way as a result of a lack of awareness of what you are asking the persistence layer to do. Often, you’ll find that simply enabling logging of sql statements will open your eyes to the problem. In fact, when using a data access framework that generates statements on your behalf – it should be *mandatory* that you inspect the generated statements to ensure both their effectiveness, and their performance.
 
 Today we’re going to talk about a simple optimisation trick that comes after you have done all you can do for the query, it’s been carefully developed, tested, and you have given consideration to query optimisation – now what? Well you can enable _IN clause padding_ to get the query cache on your side so that less execution plans will be required for your query.
 
@@ -29,7 +29,7 @@ Based on combinations of the above, it cannot always be guaranteed that ‘best�
 SQL has to put a lot of work to build an execution plan, so it caches the execution plan in memory to avoid having to do the same work over and over again.
 
 #### The query cache
-SQL Server uses the Query Cache to reuse plans. SQL Server can avoid the overhead of calculating the execution plan for each request and speed up the execution of the queries. The query cache allows SQL Server to reuse Execution Plans for subsequent requests. Within the query cache, additional information is captured, for example the number of times a query has been executed, resources used, etc, so inspecting the contents of the query cache can be a way of diagnosing performance issues in your query statements.
+SQL Server uses the Query Cache to reuse plans. SQL Server can avoid the overhead of calculating the execution plan for each request and speed up the execution of the queries. The query cache allows SQL Server to reuse Execution Plans for subsequent requests. Within the query cache, additional information is captured, for example the number of times a query has been executed, resources used, etc., so inspecting the contents of the query cache can be a way of diagnosing performance issues in your query statements.
 
 The query cache can be cleared by executing T-SQL commands, but this is not recommended in production code.
 

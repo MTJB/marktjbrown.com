@@ -9,7 +9,7 @@ tags:   [docker, sql]
 
 ## 👋 Introduction
 A few years ago I switched my main work machine from Windows to Mac – despite the reliance I have on SQL Server to run 
-our application (Well, there’s also the dev-only H2 database, but even then I knew that wouldn’t fly due to some ‘subtle’ differences).
+our application (Well, there’s also the dev-only H2 database, but even then I knew that would not fly due to some ‘subtle’ differences).
 
 ![SQL Error]({{site.baseurl}}/images/posts/2020-10-06-running-microsoft-sql-server-on-a-mac/sql-error.png)
 
@@ -44,13 +44,13 @@ sudo docker run \
    -d mcr.microsoft.com/mssql/server:2019-latest
 ```
 
-| Parameter | Description |
-|---|---|
-| `-e “ACCEPT_EULA=Y”` | Set ACCEPT_EULA to confirm you accept the [end user licensing agreement](https://go.microsoft.com/fwlink/?LinkId=746388), this is required to start the image. |
-| `-e “SA_PASSWORD=<YourStrong@Passw0rd>”` | Specify your own strong password, again this is required to start the image. |
-| `-p 1433:1433` | Map a port number on the host environment (your machine) to with a TCP port on the container (second number) |
-| `-name sql1` | 	A name for the container. If not specified, a [random one](https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go) will be generated. |
-| `-volume /Users/mark/DockerShare:/HostShare/` | Map a shared folder from the Host OS to the docker container (Very useful for transferring database backups!) |
+| Parameter                                     | Description                                                                                                                                                    |
+|-----------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `-e “ACCEPT_EULA=Y”`                          | Set ACCEPT_EULA to confirm you accept the [end user licensing agreement](https://go.microsoft.com/fwlink/?LinkId=746388), this is required to start the image. |
+| `-e “SA_PASSWORD=<YourStrong@Passw0rd>”`      | Specify your own strong password, again this is required to start the image.                                                                                   |
+| `-p 1433:1433`                                | Map a port number on the host environment (your machine) to with a TCP port on the container (second number)                                                   |
+| `-name sql1`                                  | 	A name for the container. If not specified, a [random one](https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go) will be generated. |
+| `-volume /Users/mark/DockerShare:/HostShare/` | Map a shared folder from the Host OS to the docker container (Very useful for transferring database backups!)                                                  |
 
 #### Connect to Docker SQL Server with a SQL Editor
 So, you may have guessed by now – but not only will SQL Server not work on macOS, but neither will [SQL Server Management Studio](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15)! But fear not, Microsoft still has our backs – I have been using [Azure Data Studio](https://docs.microsoft.com/en-us/sql/azure-data-studio/download-azure-data-studio?view=sql-server-ver15) to connect to and manage my SQL Server container, and have found it can do (almost) everything I need. To connect, simply input the login credentials specified when running the container.

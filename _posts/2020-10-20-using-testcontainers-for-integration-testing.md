@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Using Testcontainers for Integration Testing
-description: As a follow on from my last post about running sql server in docker, I thought i’d write about something...
+description: As a follow on from my last post about running sql server in docker, I thought I’d write about something...
 date:   2020-10-20 15:01:35 +0300
 image:  '/images/posts/2020-10-20-using-testcontainers-for-integration-testing/testing.jpg'
 tags:   [docker, testing]
@@ -10,14 +10,14 @@ tags:   [docker, testing]
 <blockquote class="twitter-tweet tw-align-center"><p lang="en" dir="ltr">You don&#39;t. <br><br>You test them using integration tests against the actual DB using Docker or <a href="https://twitter.com/testcontainers?ref_src=twsrc%5Etfw">@testcontainers</a></p>&mdash; Vlad Mihalcea (@vlad_mihalcea) <a href="https://twitter.com/vlad_mihalcea/status/1196026201669881857?ref_src=twsrc%5Etfw">November 17, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 👋 Introduction
-As a follow on from my last post about running sql server in docker, I thought i’d write about something that I have just introduced for the first time into one of my projects – in the hope that some of you feel as passionate as I do about testing your production code (and not just the equivalent in [H2](https://www.h2database.com/html/main.html)-specific syntax 😱). I hope that through this post I can show you how easy it is to include this dependency into your project, and be on your way to having your integration tests running against your production database!
+As a follow on from my last post about running sql server in docker, I thought I’d write about something that I have just introduced into one of my projects – in the hope that some of you feel as passionate as I do about testing your production code (and not just the equivalent in [H2](https://www.h2database.com/html/main.html)-specific syntax 😱). I hope that through this post I can show you how easy it is to include this dependency into your project, and be on your way to having your integration tests running against your production database!
 
-You can use any resource in your tests that has a docker image (E.g. databases, web browsers, message queues, etc) but in this post I will be outlining how to include testcontainers’ own [MS SQL Server Module](https://www.testcontainers.org/modules/databases/mssqlserver/) alongside [Spock](https://spockframework.org/) to write your integration tests.
+You can use any resource in your tests that has a docker image (E.g. databases, web browsers, message queues, etc.) but in this post I will be outlining how to include testcontainers own [MS SQL Server Module](https://www.testcontainers.org/modules/databases/mssqlserver/) alongside [Spock](https://spockframework.org/) to write your integration tests.
 
 All code in this post is available open source under the MIT licence on my [GitHub](https://github.com/MTJB/blog-code-examples), so please feel free to check it out use it as you wish for your own projects.
 
 ## 🧐 Requirements
-In order to use testcontainers, you will of course need to have Docker [installed and running](https://docs.docker.com/desktop/). You will also need to add the the testcontainer depencies for MSSQLServer, for example (in Gradle);
+In order to use testcontainers, you will of course need to have Docker [installed and running](https://docs.docker.com/desktop/). You will also need to add the testcontainer dependency for MSSQLServer, for example (in Gradle);
 
 ```groovy
 testCompile 'org.testcontainers:testcontainers:1.14.3'
@@ -27,7 +27,7 @@ testCompile 'org.testcontainers:mssqlserver:1.14.3'
 Since MSSQL Server is a licensed product – you will also need to accept the license or the container will fail to start – to do this simply place a file named [container-license-acceptance.txt](https://github.com/MTJB/blog-code-examples/blob/main/src/test/resources/container-license-acceptance.txt) into test resources folder.
 
 ## ✍️ Writing your first test
-Now that you have the testcontainer dependency on your classpath, its time to actually use it!
+Now that you have the testcontainer dependency on your classpath, it's time to actually use it!
 
 #### Define an Initializer
 An Initializer – simply put – is what tells the ApplicationContext where your db is – by nature the Docker container gets a randomly allocated port so this cannot be statically set (or rather, should _not_ be to avoid port collisions on startup).
@@ -76,7 +76,7 @@ class SqlSpec extends Specification {
             props.put("spring.datasource.url", jdbcUrl)
  
             environment.getPropertySources().addFirst(new PropertiesPropertySource("myTestDBProps", props))
-            configurableApplicationContext.setEnvironment(environment);
+            configurableApplicationContext.setEnvironment(environment)
         }
     }
 }
