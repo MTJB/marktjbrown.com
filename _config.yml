@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Mark Brown
-logo: # You can add own logo. For example '/images/logo.png'.
+logo: '/images/site-logo.svg' # You can add own logo. For example '/images/logo.png'.
 description: Hi I’m Mark, a Software Engineer from Belfast and Head of Support in the Brown house. Duties mainly involve turning it off and on again.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
