@@ -7,15 +7,6 @@ image:  '/images/posts/2021-12-02-til-tsql-string-compare/hero.png'
 tags:   [sql]
 ---
 
----
-title: TIL - Comparing Strings with trailing spaces using TSQL
-author: Mark Brown
-date: 2021-12-02
-hero: ./images/hero.png
-slug: /til-tsql-string-compare
-excerpt: I set off down this path of enlightenment as I investigated a customer issue that “could never happen”.
----
-
 ## Summary 📖
 I set off down this path of enlightenment as I investigated a customer issue that "could never happen". I paused briefly to wipe the egg off my face then dug into how it could happen.
 
